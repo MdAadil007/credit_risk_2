@@ -1,11 +1,11 @@
+import os
 import joblib
 import numpy as np
 import pandas as pd
 
-# Path to the saved model and its components
-MODEL_PATH = 'artifacts/model_data.joblib'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, 'Artifacts', 'model_data.joblib')
 
-# Load the model and its components
 model_data = joblib.load(MODEL_PATH)
 model = model_data['model']
 scaler = model_data['scaler']
